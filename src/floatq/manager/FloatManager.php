@@ -29,7 +29,7 @@ class FloatManager{
 	public function tick(){
 		$float = $this->getFloat(); $query = $this->getQuery(); $lvl = $this->getLevel();
 		$float->setTitle("".$query->getName()."");
-		$float->setText("".$query->getFormatOn()."\n§e".$query->getOnlines()."§7/§e".$query->getMaxOnlines()."");
+		if(!$query->isOnline()) $float->setText("".$query->getFormatOn()); else $float->setText("".$query->getFormatOn()."\n§e".$query->getOnlines()."§7/§e".$query->getMaxOnlines());
 		$lvl->addParticle($float);
 	}
 }
