@@ -15,7 +15,7 @@ class Main extends PluginBase{
 	public $floats = [];
 	
 	public function onEnable(){
-		$this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask([$this, "update"]), 40);
+		$this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask([$this, "update"]), 100);
 		$lvl = $this->getServer()->getLevelByName("world");
 		$coord = $lvl->getSafeSpawn();
 		$this->createFloat(new Position($coord->x, $coord->y, $coord->z, $lvl), "play.lbsg.net", 19132, "§eLBSG");
